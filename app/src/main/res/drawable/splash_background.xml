@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/main_color" />
+    <item
+        android:gravity="center"
+        android:width="240dp"
+        android:height="240dp">
+        <bitmap
+            android:src="@drawable/icon_moviely" />
+    </item>
+
+</layer-list>

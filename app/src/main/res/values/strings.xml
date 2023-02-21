@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Moviely</string>
+    <string name="on_board_title_1">Movie Database</string>
+    <string name="on_board_desc_1">Moviely offers a comprehensive database of movies from the latest releases to timeless classics, making it the ultimate movie resource for film enthusiasts.</string>
+    <string name="on_board_title_2">Popularity &amp; Rating</string>
+    <string name="on_board_desc_2">Moviely allows you to stay up-to-date on the current popularity of films and read reviews from other users to make informed movie-watching decisions.</string>
+    <string name="on_board_title_3">Movie Rating</string>
+    <string name="on_board_desc_3">Moviely is the ideal app for movie lovers who want to share their opinions on films. It allows you to rate movies and contribute to the movie community by sharing your thoughts and insights.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>

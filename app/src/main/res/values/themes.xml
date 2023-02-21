@@ -1,0 +1,39 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.Moviely" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/main_color</item>
+        <item name="colorPrimaryVariant">@color/main_color</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/main_color</item>
+        <item name="colorSecondaryVariant">@color/main_color</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Customize your theme here. -->
+
+    </style>
+
+    <style name="SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="colorPrimary">@color/main_color</item>
+        <item name="colorPrimaryDark">@color/main_color</item>
+        <item name="colorAccent">@color/main_color</item>
+        <item name="android:statusBarColor">@color/main_color</item>
+        <item name="android:navigationBarColor">@color/main_color</item>
+
+    </style>
+
+    <style name="CustomTextItem" parent="@android:style/TextAppearance.Widget.IconMenu.Item">
+        <item name="android:fontFamily">@font/montserrat_alternates</item>
+        <item name="android:textSize">@dimen/sixteen_sp</item>
+    </style>
+
+    <style name="CustomTextItemUnselected" parent="@android:style/TextAppearance.Widget.IconMenu.Item">
+        <item name="android:fontFamily">@font/montserrat_alternates</item>
+        <item name="android:textSize">@dimen/twelve_sp</item>
+    </style>
+
+</resources>

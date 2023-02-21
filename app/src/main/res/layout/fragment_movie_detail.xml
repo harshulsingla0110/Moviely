@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/motionLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/fragment_movie_detail_scene"
+    tools:context=".ui.view.fragments.MovieDetailFragment">
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivBanner"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:scaleType="fitXY"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivBack"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/text_view_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/montserrat_alternates_semibold"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/ivBanner"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ivBanner"
+        app:layout_constraintTop_toBottomOf="@+id/ivBanner"
+        tools:text="Toofan" />
+
+    <TextView
+        android:id="@+id/text_view_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat_alternates"
+        android:textColor="@color/dark_grey"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/cardView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/text_view_name"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_name"
+        tools:text="Action, Adventure, Fantasy" />
+
+    <TextView
+        android:id="@+id/text_view_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_alternates"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/cardView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/text_view_name"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_category"
+        tools:text="2h 23min" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/text_view_category">
+
+        <TextView
+            android:id="@+id/text_view_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:fontFamily="@font/montserrat_alternates"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="⭐ 4.6" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvPopularity"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/cvRate"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_duration">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_view_popularity"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_increase"
+                app:layout_constraintBottom_toTopOf="@+id/text_view_popularity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/text_view_popularity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_alternates_medium"
+                android:text="1003"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_view_popularity" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/label_popularity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat_alternates_medium"
+        android:text="Popularity"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/cvPopularity"
+        app:layout_constraintStart_toStartOf="@+id/cvPopularity"
+        app:layout_constraintTop_toBottomOf="@+id/cvPopularity" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvRate"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/cvFavourite"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cvPopularity"
+        app:layout_constraintTop_toTopOf="@+id/cvPopularity">
+
+        <ImageView
+            android:id="@+id/ivStar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_rate" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/label_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat_alternates_medium"
+        android:text="Rate"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/cvRate"
+        app:layout_constraintStart_toStartOf="@+id/cvRate"
+        app:layout_constraintTop_toBottomOf="@+id/cvRate" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvFavourite"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/cvTrailer"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cvRate"
+        app:layout_constraintTop_toTopOf="@+id/cvPopularity">
+
+        <ImageView
+            android:id="@+id/ivFavourite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_film_unselected" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/label_Favourite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat_alternates_medium"
+        android:text="Favourite"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/cvFavourite"
+        app:layout_constraintStart_toStartOf="@+id/cvFavourite"
+        app:layout_constraintTop_toBottomOf="@+id/cvRate" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvTrailer"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cvFavourite"
+        app:layout_constraintTop_toTopOf="@+id/cvPopularity">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_trailer" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/label_trailer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat_alternates_medium"
+        android:text="Trailer"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/cvTrailer"
+        app:layout_constraintStart_toStartOf="@+id/cvTrailer"
+        app:layout_constraintTop_toBottomOf="@+id/cvRate" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:max="5"
+        android:numStars="5"
+        android:stepSize=".5"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_rate" />
+
+    <TextView
+        android:id="@+id/tvSummary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Summary"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/ivBanner"
+        app:layout_constraintStart_toStartOf="@+id/ivBanner"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+    <TextView
+        android:id="@+id/labelCast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Cast"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="@+id/ivBanner"
+        app:layout_constraintTop_toBottomOf="@+id/tvSummary" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelCast"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/item_actor" />
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
