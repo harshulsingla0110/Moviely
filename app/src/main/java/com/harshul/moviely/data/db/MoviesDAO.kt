@@ -14,8 +14,8 @@ interface MoviesDAO {
     @Query("SELECT * FROM table_movie")
     fun getAllMovies(): LiveData<List<Movie>>
 
-    @Query("SELECT * FROM table_movie")
-    suspend fun getTrendingMovies(): List<Movie>
+    @Query("SELECT * FROM table_movie WHERE category_id = 1")
+    fun getTrendingMovies(): LiveData<List<Movie>>
 
     @Update
     suspend fun updateMovie(movie: Movie)

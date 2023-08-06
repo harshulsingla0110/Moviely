@@ -23,7 +23,7 @@ class MoviesRepository @Inject constructor(
 
     suspend fun updateMovie(movie: Movie) = moviesDB.getMoviesDAO().updateMovie(movie)
 
-    suspend fun getTrendingMovies() = moviesDB.getMoviesDAO().getTrendingMovies()
+    fun getTrendingMovies() = moviesDB.getMoviesDAO().getTrendingMovies()
 
     fun getGenreMovies(genre: String) = moviesDB.getMoviesDAO().getGenreMovies(genre)
 

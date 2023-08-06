@@ -13,12 +13,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
-import androidx.viewpager2.widget.ViewPager2
 import com.harshul.moviely.R
 import com.harshul.moviely.data.models.ItemGrid
 import com.harshul.moviely.data.models.Movie
 import com.harshul.moviely.databinding.FragmentHomeBinding
-import com.harshul.moviely.ui.adapter.*
+import com.harshul.moviely.ui.adapter.HomeGridAdapter
+import com.harshul.moviely.ui.adapter.MovieHorizontalAdapter
+import com.harshul.moviely.ui.adapter.MovieSliderAdapter
+import com.harshul.moviely.ui.adapter.OnHomeItemClick
+import com.harshul.moviely.ui.adapter.OnMovieHorizontalListener
+import com.harshul.moviely.ui.adapter.OnMovieSliderClickListener
 import com.harshul.moviely.ui.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.math.abs
@@ -53,7 +57,7 @@ class HomeFragment : Fragment(), OnMovieSliderClickListener, OnMovieHorizontalLi
         }
 
         val mainViewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
-        mainViewModel.getAllMovies().observe(viewLifecycleOwner) { moviesList ->
+        mainViewModel.getTrendingMovies().observe(viewLifecycleOwner) { moviesList ->
             val adapter = MovieSliderAdapter(moviesList, this)
             binding.viewPager.adapter = adapter
         }
@@ -73,22 +77,6 @@ class HomeFragment : Fragment(), OnMovieSliderClickListener, OnMovieHorizontalLi
         }
 
         binding.viewPager.setPageTransformer(compositePageTransformer)
-
-
-        /*val sliderRunnable = Runnable {
-            kotlin.run {
-                binding.viewPager.currentItem += 1
-            }
-        }
-
-        */
-
-        binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-                super.onPageSelected(position)
-                //Log.d("TAG", "onPageSelected: selected")
-            }
-        })
 
         mainViewModel.getAllMovies().observe(viewLifecycleOwner) { moviesList ->
             val adapterRecentlyAdded = MovieHorizontalAdapter(moviesList, this)

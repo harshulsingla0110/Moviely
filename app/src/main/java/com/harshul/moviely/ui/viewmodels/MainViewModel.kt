@@ -26,11 +26,7 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    fun getTrendingMovies() {
-        viewModelScope.launch(Dispatchers.IO) {
-            val c = repository.getTrendingMovies()
-        }
-    }
+    fun getTrendingMovies() = repository.getTrendingMovies()
 
     fun getGenreMovies(genre: String) = repository.getGenreMovies(genre)
 
